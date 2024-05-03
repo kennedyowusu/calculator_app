@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculator</title>
+    <link href="assets/images/favicon.ico" rel="shortcut icon">
+
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+
+</head>
+
+<body class="font-roboto text-base text-slate-900 dark:text-white bg-white dark:bg-slate-900">
+
+    <!-- TOP SECTION -->
+
+    <section class="py-6 bg-white dark:bg-slate-900 shadow dark:shadow-gray-700 fixed top-0 start-0 end-0 z-3">
+        <div class="container relative">
+            <div class="md:flexc justify-center">
+                <div class="md:w-full text-center">
+                    <h4 class="text-lg tracking-[0.017rem] font-bold">Modern Functional Calculator</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MIDDLE SECTION -->
+
+    <section
+    class="relative bg-slate-50 dark:bg-slate-800 h-screen flex justify-center items-center">
+
+    <div class="container">
+
+        <div class="flex justify-center">
+
+            <div class="w-[400px]">
+
+                <div class="rounded p-4 bg-white dark:bg-slate-900 shadow dark:shadow-gray-700">
+
+                    <input type="text" id="Calculate"
+                        class="form-input w-full py-2 px-3 h-16 bg-slate-50 dark:bg-slate-800 dark:text-white rounded outline-none border-0 focus:ring-0 font-medium text-2xl mb-3 text-end"
+                        maxlength="15" placeholder="0" disabled>
+
+                    <div class="buttons grid grid-cols-3 gap-3">
+                        <button
+                            class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-slate-50 dark:bg-slate-800 mx-auto shadow-sm dark:shadow-gray-800"
+                            onclick="clearResult()">AC</button>
+
+                        <button
+                            class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-2xl font-medium text-center rounded-full bg-slate-50 dark:bg-slate-800 mx-auto shadow-sm dark:shadow-gray-800"
+                            onclick="appendToResult('+')">+</button>
+
+                        <button
+                            class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-2xl font-medium text-center rounded-full bg-slate-50 dark:bg-slate-800 mx-auto shadow-sm dark:shadow-gray-800"
+                            onclick="appendToResult('-')">−</button>
+
+                        <button
+                            class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-2xl font-medium text-center rounded-full bg-slate-50 dark:bg-slate-800 mx-auto shadow-sm dark:shadow-gray-800"
+                            onclick="appendToResult('*')">×</button>
+
+                        <button
+                            class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-2xl font-medium text-center rounded-full bg-slate-50 dark:bg-slate-800 mx-auto shadow-sm dark:shadow-gray-800"
+                            onclick="appendToResult('/')">÷</button>
+
+                        <button
+                            class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-2xl font-medium text-center rounded-full bg-slate-50 dark:bg-slate-800 mx-auto shadow-sm dark:shadow-gray-800"
+                            onclick="appendToResult('.')">•</button>
+
+                        <button
+                            class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-white dark:bg-slate-900 mx-auto shadow-sm dark:shadow-gray-800"
+                            onclick="appendToResult('7')">7</button>
+
+                        <button
+                            class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-white dark:bg-slate-900 mx-auto shadow-sm dark:shadow-gray-800"
+                            onclick="appendToResult('8')">8</button>
+
+                        <button
+                            class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-white dark:bg-slate-900 mx-auto shadow-sm dark:shadow-gray-800"
+                            onclick="appendToResult('9')">9</button>
+
+                        <button
+                            class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-white dark:bg-slate-900 mx-auto shadow-sm dark:shadow-gray-800"
+                            onclick="appendToResult('4')">4</button>
+
+                        <button
+                            class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-white dark:bg-slate-900 mx-auto shadow-sm dark:shadow-gray-800"
+                            onclick="appendToResult('5')">5</button>
+
+                        <button
+                            class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-white dark:bg-slate-900 mx-auto shadow-sm dark:shadow-gray-800"
+                            onclick="appendToResult('6')">6</button>
+
+                        <button
+                            class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-white dark:bg-slate-900 mx-auto shadow-sm dark:shadow-gray-800"
+                            onclick="appendToResult('1')">1</button>
+
+                        <button
+                            class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-white dark:bg-slate-900 mx-auto shadow-sm dark:shadow-gray-800"
+                            onclick="appendToResult('2')">2</button>
+
+                        <button
+                            class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-white dark:bg-slate-900 mx-auto shadow-sm dark:shadow-gray-800"
+                            onclick="appendToResult('3')">3</button>
+
+                        <button
+                            class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-white dark:bg-slate-900 mx-auto shadow-sm dark:shadow-gray-800"
+                            onclick="appendToResult('0')">0</button>
+                        <button
+                            class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-xl font-semibold text-center rounded-full bg-white dark:bg-slate-900 mx-auto shadow-sm dark:shadow-gray-800"
+                            onclick="appendToResult('00')">00</button>
+
+                        <button
+                            class="size-[60px] inline-flex items-center justify-center tracking-wide align-middle duration-500 text-2xl font-medium text-center rounded-full bg-red-600 text-white mx-auto shadow-sm dark:shadow-gray-800"
+                            onclick="calculate()">=</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+    <!-- FOOTER SECTION -->
+
+    <section class="py-6 bg-slate-900 shadow dark:shadow-gray-700 fixed bottom-0 start-0 end-0">
+        <div class="container relative">
+            <div class="md:flexc justify-center">
+                <div class="md:w-full text-center">
+                    <P class="text-gray-400 text-center mx-auto">
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>
+                        Kobicypher @ 2024
+                    </P>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCRIPT -->
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
+
+<!--Okay so I am back. The bug was that I missed out on a few closing quotation marks "" -->
+
+<!-- I have improved the UI a bit, changed the = button, and also worked on the input field - disabled it -->
+
+<!-- We can go ahead and test it out.... -->
